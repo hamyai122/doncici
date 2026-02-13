@@ -28,17 +28,20 @@
     <style>
         :root {
             /* ------------------------------------------------------------------
-               KONFIGURATION: BILDER
+               KONFIGURATION: BILDER (URLS AN NAMEN ANGEPASST)
                ------------------------------------------------------------------
             */
             --img-navbar: url('img/dein-bild.png');
-            --img-logo: url('img/logo.png'); /* Dein Logo Pfad */
+            --img-logo: url('img/logo.png'); 
 
             --bg-hero: url('img/hero.png');
             --img-intro: url('img/restaurant_intro.PNG');
-            --img-prod-1: url('img/shawarma_rolle.PNG');
-            --img-prod-2: url('img/haehnchen_teller.PNG');
-            --img-prod-3: url('img/pizza.PNG'); 
+            
+            /* Neue Image URLs passend zu den Bestsellern */
+            --img-doncici: url('img/doncici.PNG');
+            --img-doncici-teller: url('img/doncici-teller.png');
+            --img-doncici-veggi: url('img/doncici-veggi.png'); 
+            
             --img-menu-card: url('img/speisekarte_full.PNG');
             --slide-1:  url('img/galerie_1.PNG');
             --slide-2:  url('img/galerie_2.PNG');
@@ -54,9 +57,9 @@
         
         .bg-img-hero { background-image: var(--bg-hero); }
         .bg-img-intro { background-image: var(--img-intro); }
-        .bg-img-prod-1 { background-image: var(--img-prod-1); }
-        .bg-img-prod-2 { background-image: var(--img-prod-2); }
-        .bg-img-prod-3 { background-image: var(--img-prod-3); }
+        .bg-img-doncici { background-image: var(--img-doncici); }
+        .bg-img-doncici-teller { background-image: var(--img-doncici-teller); }
+        .bg-img-doncici-veggi { background-image: var(--img-doncici-veggi); }
         .bg-img-menu { background-image: var(--img-menu-card); }
         .bg-img-map { background-image: var(--img-map); }
 
@@ -88,13 +91,12 @@
         
         <!-- Navbar Header (Holzbild fixiert auf h-20) -->
         <div class="relative h-20 border-b border-white/10 shadow-lg overflow-hidden">
-            <!-- Background Layer: Verhindert Zoomen -->
+            <!-- Background Layer fixiert (verhindert Zoom) -->
             <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: var(--img-navbar);">
-                 <!-- Dunkler Overlay für Lesbarkeit -->
                  <div class="absolute inset-0 bg-black/40"></div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-full text-white">
                 <div class="flex items-center justify-between h-full">
                     <!-- LOGO BEREICH -->
                     <a href="#home" class="flex items-center h-full py-2">
@@ -102,7 +104,7 @@
                         <span id="logo-fallback" class="hidden font-bold text-xl tracking-wider uppercase text-white drop-shadow-md">Don<span class="text-cyan-400">cici</span></span>
                     </a>
                     
-                    <!-- Desktop Navigation -->
+                    <!-- Desktop Navigation (Abgerundete schwarze Buttons) -->
                     <div class="hidden md:block">
                         <div class="flex items-center space-x-4">
                             <a href="#home" class="bg-black/80 backdrop-blur-md text-white px-5 py-2 border border-white/10 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all text-xs font-bold uppercase tracking-widest drop-shadow-md">
@@ -114,7 +116,6 @@
                             <a href="#speisekarte" class="bg-black/80 backdrop-blur-md text-white px-5 py-2 border border-white/10 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all text-xs font-bold uppercase tracking-widest drop-shadow-md">
                                 Speisekarte
                             </a>
-                            <!-- Anfahrt Button -->
                             <a href="#contact-footer" class="bg-cyan-500 text-white px-6 py-2 border border-cyan-400 rounded-lg hover:bg-white hover:text-black hover:border-white transition-all text-xs font-bold uppercase tracking-widest shadow-lg shadow-cyan-500/20 transform hover:-translate-y-0.5">
                                 Anfahrt
                             </a>
@@ -156,7 +157,7 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-transparent to-transparent"></div>
                 </div>
 
-                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16">
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16 text-white">
                     <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
                         <div class="md:w-1/2 text-center md:text-left">
                             
@@ -200,32 +201,32 @@
             </section>
 
             <!-- HIGHLIGHTS -->
-            <section id="about-highlights" class="py-24 bg-gray-900">
+            <section id="about-highlights" class="py-24 bg-gray-900 text-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white uppercase tracking-tighter">Warum es bei uns anders schmeckt</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-tighter">Warum es bei uns anders schmeckt</h2>
                         <div class="w-24 h-1 bg-cyan-500 mx-auto rounded-full"></div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                         <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500/50 group transition duration-300 shadow-xl text-center md:text-left">
                             <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:bg-white group-hover:text-gray-900 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                             </div>
-                            <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-tight">100% Echtes Fleisch</h3>
+                            <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">100% Echtes Fleisch</h3>
                             <p class="text-gray-400">Kein Hackfleisch-Gemisch. Wir verwenden nur marinierte Scheiben von Kalb und Hähnchen, täglich frisch gesteckt.</p>
                         </div>
                         <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500/50 group transition duration-300 shadow-xl text-center md:text-left">
                             <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:bg-white group-hover:text-gray-900 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
-                            <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-tight">Geheime Toum-Creme</h3>
+                            <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Geheime Toum-Creme</h3>
                             <p class="text-gray-400">Unsere Knoblauchcreme (Toum) wird nach einem alten Familienrezept hergestellt. Cremig, intensiv, unvergesslich.</p>
                         </div>
                         <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-cyan-500/50 group transition duration-300 shadow-xl text-center md:text-left">
                             <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:bg-white group-hover:text-gray-900 transition-all duration-300">
-                                <svg class="w-8 h-8 text-white group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
-                            <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-tight">Hausgemachtes Brot</h3>
+                            <h3 class="text-xl font-bold mb-3 uppercase tracking-tight">Hausgemachtes Brot</h3>
                             <p class="text-gray-400">Wir kaufen nichts ein. Unser Pita-Brot kommt direkt aus dem Ofen auf deinen Teller. Warm und fluffig.</p>
                         </div>
                     </div>
@@ -245,31 +246,31 @@
                         </a>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="group">
+                        <div id="doncici" class="group">
                             <div class="relative overflow-hidden rounded-2xl h-64 mb-4">
                                 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition z-10"></div>
-                                <div class="w-full h-full bg-img-prod-1 bg-cover bg-center transform group-hover:scale-110 transition duration-500"></div>
+                                <div class="w-full h-full bg-img-doncici bg-cover bg-center transform group-hover:scale-110 transition duration-500"></div>
                                 <div class="absolute top-4 right-4 bg-cyan-600 text-white font-black px-4 py-1 rounded-full z-20">€ 6.00</div>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-1 uppercase tracking-tight">Shawarma Hähnchen Rolle</h3>
+                            <h3 class="text-xl font-bold text-white mb-1 uppercase tracking-tight">Doncici</h3>
                             <p class="text-gray-400 text-sm mb-4">Saftiges Hähnchenfleisch im Brot gerollt.</p>
                         </div>
-                        <div class="group">
+                        <div id="doncici-teller" class="group">
                             <div class="relative overflow-hidden rounded-2xl h-64 mb-4">
                                 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition z-10"></div>
-                                <div class="w-full h-full bg-img-prod-2 bg-cover bg-center transform group-hover:scale-110 transition duration-500"></div>
+                                <div class="w-full h-full bg-img-doncici-teller bg-cover bg-center transform group-hover:scale-110 transition duration-500"></div>
                                 <div class="absolute top-4 right-4 bg-cyan-600 text-white font-black px-4 py-1 rounded-full z-20">€ 11.00</div>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-1 uppercase tracking-tight">Hähnchenrolle Teller</h3>
+                            <h3 class="text-xl font-bold text-white mb-1 uppercase tracking-tight">Doncici Teller</h3>
                             <p class="text-gray-400 text-sm mb-4">Hähnchenrolle, Pommes, Knoblauchsauce, Salat.</p>
                         </div>
-                        <div class="group">
+                        <div id="doncici-veggi" class="group">
                             <div class="relative overflow-hidden rounded-2xl h-64 mb-4">
                                 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition z-10"></div>
-                                <div class="w-full h-full bg-img-prod-3 bg-cover bg-center transform group-hover:scale-110 transition duration-500"></div>
+                                <div class="w-full h-full bg-img-doncici-veggi bg-cover bg-center transform group-hover:scale-110 transition duration-500"></div>
                                 <div class="absolute top-4 right-4 bg-green-600 text-white font-black px-4 py-1 rounded-full z-20">€ 6.00</div>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-1 uppercase tracking-tight">Pizza Margherita</h3>
+                            <h3 class="text-xl font-bold text-white mb-1 uppercase tracking-tight">Doncici Veggi</h3>
                             <p class="text-gray-400 text-sm mb-4">Klassisch mit fruchtiger Tomatensauce und Mozzarella.</p>
                         </div>
                     </div>
