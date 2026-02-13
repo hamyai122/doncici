@@ -29,13 +29,13 @@
         :root {
             /* ------------------------------------------------------------------
                HIER NAVI-BILD EINFÜGEN:
-               Ersetze 'img/navi_background.jpg' mit deinem Dateinamen.
+               Ersetze 'img/dein-bild.png' mit deinem Dateinamen.
                Wenn du kein Bild willst, schreibe: none
                ------------------------------------------------------------------
             */
             --img-navbar: url('img/dein-bild.png');
 
-            --bg-hero: url('img/hero1.png');
+            --bg-hero: url('img/hero.png');
             --img-intro: url('img/restaurant_intro.PNG');
             --img-prod-1: url('img/shawarma_rolle.PNG');
             --img-prod-2: url('img/haehnchen_teller.PNG');
@@ -87,8 +87,8 @@
 <body class="bg-gray-950 text-gray-100 antialiased selection:bg-cyan-500 selection:text-white flex flex-col min-h-screen">
 
     <!-- NAVIGATION -->
-    <!-- Ich habe 'bg-white/95' entfernt, damit dein Bild voll sichtbar ist. 'bg-white' bleibt als Fallback. -->
-    <nav class="fixed w-full z-50 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm" 
+    <!-- Added 'transition-transform duration-300' for smooth hide/show effect -->
+    <nav id="main-nav" class="fixed w-full z-50 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm transition-transform duration-300" 
          style="background-image: var(--img-navbar); background-size: cover; background-position: center;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -458,8 +458,31 @@
             slides[currentSlide].classList.remove('slide-hidden');
             slides[currentSlide].classList.add('slide-active');
         }
+
+        // NAVBAR SCROLL LOGIK (Smartphone)
+        let lastScrollY = window.scrollY;
+        const navBar = document.getElementById('main-nav');
+        
+        window.addEventListener('scroll', () => {
+            // Prüfen ob mobil (md breakpoint ist 768px in Tailwind standard)
+            if (window.innerWidth < 768) { 
+                const currentScrollY = window.scrollY;
+                
+                // Wenn nach unten gescrollt wird UND wir nicht ganz oben sind (um Flackern zu vermeiden)
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                    navBar.classList.add('-translate-y-full');
+                    // Mobile Menü auch schließen, falls offen
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                } else {
+                    navBar.classList.remove('-translate-y-full');
+                }
+                lastScrollY = currentScrollY;
+            } else {
+                // Auf Desktop immer sichtbar
+                navBar.classList.remove('-translate-y-full');
+            }
+        });
     </script>
 
 </body>
 </html>
-
